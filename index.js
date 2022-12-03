@@ -12,7 +12,12 @@ app.use(cors());
 
 const { StaticJsonRpcProvider } =require('@ethersproject/providers');
 const { AvatarResolver, utils: avtUtils }= require('@ensdomains/ens-avatar');
+const { json } = require('body-parser');
 
+
+app.get('/',(req,res)=>{
+    return res.json("hello world")
+})
 
 app.get('/get_avatar/:ens',async (req,res)=>{
     let ens = req.params.ens
